@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            height: 580px;
+            background: url("images/exam-005.jpg") no-repeat;
+            background-size:100%;
+        }
+        div{
+            position: absolute;
+            cursor: pointer;
+        }
+        .parnet>div:nth-child(1){
+            width: 400px;
+            height: 500px;
+            background: url("images/exam-004.png") no-repeat;
+            left:100px;
+            top: 40px; 
+            transform: rotate(-15deg);
+            transform-origin: 34px 463px;
+            transition: 0.6s ease-in;
+        }
+        .parnet>div:nth-child(2){
+            width: 260px;
+            height: 260px;
+            background: url("images/exam-003.png") no-repeat;
+            left: 480px;
+            top: 280px;
+            transition: 0.1s ease-out 0.2s;
+        }
+        .parnet>div:nth-child(3){
+            width: 180px;
+            height: 120px;
+           /* background-color: #fe9031;
+            border-radius: 50%;
+            line-height: 160%;*/
+            color:black;
+            padding: 40px;
+            left: 680px;
+            top: 100px;
+            transition: 0.3s ease-out 0.6s;
+            opacity: 0;
+        }
+        .parnet>div:nth-child(1):active{
+            transform: rotate(42deg);
+        }
+        .parnet>div:nth-child(1):active+div{
+            transform: matrix(0.6,0.2,0,0.6,80,10);
+        }
+        .parnet>div:nth-child(1):active ~ div:nth-child(3){
+            opacity: 1;
+            transform: matrix(1,0.3,0,1,-50,90);
+        }
+    </style>
+</head>
+<body>
+    <div class="parnet">
+        <div class="1"></div>
+        <div></div>
+        <div>你砍不到我</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .parent{
+        width: 200px;
+        margin-left: 400px;
+        position: relative;
+        border: solid 1px;
+       transform-style: preserve-3d;
+    }
+    .parent>div{
+        width: 200px;
+        height: 200px;
+        backface-visibility:hidden;
+        transition: 3s;
+    }
+    .parent>div:nth-child(1){
+        background-image: url("images/1.jpg");
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .parent>div:nth-child(2){
+        background-color: red;
+        transform: rotateY(180deg);
+    }
+    .parent:hover div:nth-child(1){
+        transform: rotateY(180deg) rotateX(30deg);
+    }
+    .parent:hover div:nth-child(2)
+    {
+        transform: rotateY(0deg) rotateX(30deg);
+    }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div></div>
+        <div>我是一张图片</div>
+    </div>
+</body>
+</html>

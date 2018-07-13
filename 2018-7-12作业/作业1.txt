@@ -1,0 +1,50 @@
+作业1：实现一个div翻转效果，要求正面为你的照片，反面为你的介绍。
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style>
+.parent{
+margin-left:300px;
+width:200px;
+border:1px red solid;
+position:relative;
+}
+.parent>div{
+width:200px;
+height:200px;
+backface-visibility:hidden;
+transition:2s;
+}
+.parent>div:nth-child(1){
+background-color:yellow;
+transform:rotatey(180deg);
+}
+.parent>div:nth-child(2){
+background-color:red;
+position:absolute;
+top:0;
+left:0;
+}
+.parent:hover div:nth-child(2){
+ transform:rotatey(180deg);
+} 
+.parent:hover div:nth-child(1){
+ transform:rotatey(0deg);
+} 
+
+
+
+</style>
+</head>
+<body>
+<div class="parent">
+<div>1. 我是div1</div>
+<div>2. 我是div2</div>
+</div>
+</body>
+</html>
